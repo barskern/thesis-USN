@@ -1,18 +1,18 @@
-%% ntnuthesis.cls - a LaTeX class for theses at NTNU
+%% usnthesis.cls - a LaTeX class for theses at USN
 %%
-%% CC-BY CoPCSE@NTNU, 2019
+%% CC-BY barskern, 2023
 %%
 %% Partly merged, partly based on, and partly a simplification of
-%% various previous thesis templates by Simon McCallum, Ivar Farup,
-%% Kjetil Ørbekk an others, by CoPCSE@NTNU.
+%% various previous thesis templates by CoPCSE@NTNU, Simon McCallum, 
+%% Ivar Farup and Kjetil Ørbekk.
 
 %% IDENTIFICATION
 
-\xdef\ntnuthesisdate{2019/07/18}
+\xdef\usnthesisdate{2019/07/18}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{ntnuthesis}
- [\ntnuthesisdate\space
-   CC-BY CoPCSE at NTNU 2019]
+\ProvidesClass{usnthesis}
+ [\usnthesisdate\space
+   CC-BY barskern at USN 2023]
 
 
 %% CLASS OPTIONS
@@ -40,10 +40,10 @@
 \DeclareOption{british}{
     \capitalizetrue
     \def\papername{Paper}
-    \newcommand{\NTNU}{{N}orwegian {U}niversity of {S}cience and {T}echnology}
-    \newcommand{\NTNUTrondheim}{{NTNU} in {T}rondheim}
-    \newcommand{\NTNUGjoevik}{{NTNU} in {G}j\o{}vik}
-    \newcommand{\NTNUAalesund}{{NTNU} in {\AA}lesund}
+    \newcommand{\USN}{{U}niversity in {S}outh-{E}astern {N}orway}
+    \newcommand{\USNKongsberg}{{USN} in {K}ongsberg}
+    \newcommand{\USNPorsgrunn}{{USN} in {P}orsgrunn}
+    \newcommand{\USNDrammen}{{USN} in {D}rammen}
     \AtBeginDocument{
         \renewcommand{\lstlistingname}{Code listing}
         \renewcommand{\lstlistlistingname}{Code Listings}
@@ -63,10 +63,10 @@
 \DeclareOption{american}{
     \capitalizetrue
     \def\papername{Paper}
-    \newcommand{\NTNU}{{N}orwegian {U}niversity of {S}cience and {T}echnology}
-    \newcommand{\NTNUTrondheim}{{NTNU} in {T}rondheim}
-    \newcommand{\NTNUGjoevik}{{NTNU} in {G}j\o{}vik}
-    \newcommand{\NTNUAalesund}{{NTNU} in {\AA}lesund}
+    \newcommand{\USN}{{U}niversity in {S}outh-{E}astern {N}orway}
+    \newcommand{\USNKongsberg}{{USN} in {K}ongsberg}
+    \newcommand{\USNPorsgrunn}{{USN} in {P}orsgrunn}
+    \newcommand{\USNDrammen}{{USN} in {D}rammen}
     \AtBeginDocument{
         \renewcommand{\lstlistingname}{Code listing}
         \renewcommand{\lstlistlistingname}{Code Listings}
@@ -86,10 +86,10 @@
 \DeclareOption{norsk}{
     \capitalizefalse
     \def\papername{Artikkel}
-    \newcommand{\NTNU}{{N}orges teknisk-naturvitenskapelige universitet}
-    \newcommand{\NTNUTrondheim}{{NTNU} i {T}rondheim}
-    \newcommand{\NTNUGjoevik}{{NTNU} i {G}j\o{}vik}
-    \newcommand{\NTNUAalesund}{{NTNU} i {\AA}lesund}
+    \newcommand{\USN}{{U}niversitetet i {S}ørøst-{N}orge}
+    \newcommand{\USNKongsberg}{{USN} i {K}ongsberg}
+    \newcommand{\USNPorsgrunn}{{USN} i {P}orsgrunn}
+    \newcommand{\USNDrammen}{{USN} i {D}rammen}
     \AtBeginDocument{
         \renewcommand{\lstlistingname}{Kodeliste}
         \renewcommand{\lstlistlistingname}{Kodelister}
@@ -109,10 +109,10 @@
 \DeclareOption{nynorsk}{
     \capitalizefalse
     \def\papername{Artikkel}
-    \newcommand{\NTNU}{{N}oregs teknisk-naturvitskaplege universitet}
-    \newcommand{\NTNUTrondheim}{{NTNU} i {T}rondheim}
-    \newcommand{\NTNUGjoevik}{{NTNU} i {G}j\o{}vik}
-    \newcommand{\NTNUAalesund}{{NTNU} i {\AA}lesund}
+    \newcommand{\USN}{{U}niversitetet i {S}øraust-{N}oreg}
+    \newcommand{\USNKongsberg}{{USN} i {K}ongsberg}
+    \newcommand{\USNPorsgrunn}{{USN} i {P}orsgrunn}
+    \newcommand{\USNDrammen}{{USN} i {D}rammen}
     \AtBeginDocument{
         \renewcommand{\lstlistingname}{Kodeliste}
         \renewcommand{\lstlistlistingname}{Kodelister}
@@ -243,14 +243,14 @@
 \def\shortauthor#1{\def\@shortauthor{#1}}
 
 % Headers and footers
-\def\ps@ntnuheadings{%
+\def\ps@usnheadings{%
     \let\@evenfoot\@empty
     \let\@oddfoot\@empty
     \def\@evenhead{\small\thepage\hfil\textit{\@shortauthor: \@shorttitle}}
     \def\@oddhead{\small\textit{\ch@ptermark}\hfil\thepage}
     \def\chaptermark##1{\def\ch@ptermark{\chaptername\ \thechapter: ##1}}
 }
-\pagestyle{ntnuheadings}
+\pagestyle{usnheadings}
 
 % Itemize and enumerate: tighter and with other symbols
 \setlist[enumerate]{itemsep=0mm, topsep=5pt, partopsep=0mm, parsep=0mm}
