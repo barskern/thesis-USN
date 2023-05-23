@@ -6,7 +6,7 @@ SRCS=\
 	$(wildcard figures/*) \
 	$(wildcard listings/*) \
 	$(wildcard papers/*) \
-	ntnuthesis.cls \
+	usnthesis.cls \
 	thesis.bib \
 	glossary.tex \
 	thesis.tex
