@@ -1,3 +1,4 @@
+NAME=thesis
 
 SRCS=\
 	$(wildcard appendices/*) \
@@ -8,25 +9,25 @@ SRCS=\
 	$(wildcard papers/*) \
 	baseusn.sty \
 	usnthesis.cls \
-	thesis.bib \
-	glossary.tex \
-	thesis.tex
+	$(NAME).bib \
+	$(NAME).tex \
+	glossary.tex
 
 LATEX_FLAGS=-shell-escape
 BIBER_FLAGS=
 
 mkdir = @mkdir -p $(@D)
 
-thesis.pdf: $(SRCS)
+$(NAME).pdf: $(SRCS)
 	$(mkdir)
-	pdflatex $(LATEX_FLAGS) thesis
-	biber $(BIBER_FLAGS) thesis
-	makeglossaries thesis
-	pdflatex $(LATEX_FLAGS) thesis
-	pdflatex $(LATEX_FLAGS) thesis
+	pdflatex $(LATEX_FLAGS) $(NAME)
+	biber $(BIBER_FLAGS) $(NAME)
+	makeglossaries $(NAME)
+	pdflatex $(LATEX_FLAGS) $(NAME)
+	pdflatex $(LATEX_FLAGS) $(NAME)
 
 clean:
 	-@$(RM) \
-		$(wildcard thesis-gnuplottex*) \
-		$(addprefix thesis,.gnuploterrors .aux .bbl .bcf .blg .lof .log .lol .lot .out .pdf .run.xml .toc .acn .glo .ist .acr .alg .glg .gls)
+		$(wildcard $(NAME)-gnuplottex*) \
+		$(addprefix $(NAME),.gnuploterrors .aux .bbl .bcf .blg .lof .log .lol .lot .out .pdf .run.xml .toc .acn .glo .ist .acr .alg .glg .gls)
 .PHONY: clean
